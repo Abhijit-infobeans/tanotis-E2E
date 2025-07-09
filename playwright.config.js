@@ -2,7 +2,7 @@
 
 const config = {
     use: {
-      headless: false, 
+      headless: true, 
       viewport: { width: 1280, height: 720 },
       baseURL: 'https://www.tanotis.com', 
       screenshot: 'only-on-failure',
