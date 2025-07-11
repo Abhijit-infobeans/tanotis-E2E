@@ -1,0 +1,22 @@
+{
+  "baseUrl": "https://www.tanotis.com/",
+  "expectedTitle": "Tanotis",
+  "category": "TV & Mobile",
+  "subcategory": "Headphones",
+  "sortOptions": [
+    {
+      "label": "Price, low to high",
+      "order": "asc"
+    },
+    {
+      "label": "Price, high to low",
+      "order": "desc"
+    }
+  ],
+  "displayOptions": [
+    {
+      "label": "24 per page",
+      "count": 24
+    }
+  ]
+}
