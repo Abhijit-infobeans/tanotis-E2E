@@ -1,4 +1,3 @@
-// pages/CartPage.js
 const { expect } = require('@playwright/test');
 
 class CartPage {

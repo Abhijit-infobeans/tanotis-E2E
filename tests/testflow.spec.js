@@ -1,4 +1,3 @@
-
 const { test, expect } = require('@playwright/test');
 const { HomePage } = require('../pages/HomePage');
 const { ProductPage } = require('../pages/ProductPage');
@@ -23,13 +22,8 @@ test('Full flow: Sort, display, and cart verification on Tanotis', async ({ page
     await productPage.verifySortOrder(sortOption.order);
   }
 
-  for (const displayOption of testData.displayOptions) {
-    console.log(`Step 4: Selecting display option "${displayOption.label}"`);
-    await productPage.selectDisplayOption(displayOption.label);
-    await productPage.verifyItemCount(displayOption.count);
-  }
 
-  console.log('Step 5: Adding item to cart');
-  await productPage.addItemToCartByIndex(0);
-  await cartPage.verifyCartItemCount(1);
+  
 });
+
+

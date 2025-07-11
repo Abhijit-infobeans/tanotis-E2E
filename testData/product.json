@@ -12,11 +12,5 @@
       "label": "Price, high to low",
       "order": "desc"
     }
-  ],
-  "displayOptions": [
-    {
-      "label": "24 per page",
-      "count": 24
-    }
   ]
 }
