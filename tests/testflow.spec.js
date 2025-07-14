@@ -4,7 +4,7 @@ const { ProductPage } = require('../pages/ProductPage');
 const { CartPage } = require('../pages/CartPage');
 const testData = require('../testData/product.json');
 
-test('Full flow: Sort, display, and cart verification on Tanotis', async ({ page }) => {
+test('Full flow: Sort, and add to cart verification on Tanotis', async ({ page }) => {
   const homePage = new HomePage(page);
   const productPage = new ProductPage(page);
   const cartPage = new CartPage(page);
@@ -22,8 +22,11 @@ test('Full flow: Sort, display, and cart verification on Tanotis', async ({ page
     await productPage.verifySortOrder(sortOption.order);
   }
 
+  console.log('Step 4: Adding product to cart...');
+  await productPage.addProductToCart();
 
-  
+  console.log('Step 5: Verifying cart popup and content...');
+  await cartPage.verifyCartPopup();
+ 
+  await cartPage.verifyCartHasItem();
 });
-
-

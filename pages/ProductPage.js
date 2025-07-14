@@ -36,33 +36,21 @@ class ProductPage {
     const sorted = [...prices].sort((a, b) =>
       order === 'asc' ? a - b : b - a
     );
+
     expect(prices).toEqual(sorted);
   }
 
   /**
-   * Selects the number of products to display per page.
-   * @param {string} optionLabel e.g., "24 per page"
+   * Adds a specific product to cart using exact selector you provided.
    */
-  async selectDisplayOption(optionLabel) {
-    const dropdown = this.page.locator('#products-pagesize');
-    await expect(dropdown).toBeVisible({ timeout: 5000 });
-    await dropdown.selectOption({ label: optionLabel });
-    await this.page.waitForLoadState('domcontentloaded');
+  async addProductToCart() {
+    const addToCartButton = this.page
+      .locator('#product_form_id_7133148512341_collection-template')
+      .getByRole('button', { name: 'Add to cart' });
+
+    await expect(addToCartButton).toBeVisible({ timeout: 10000 });
+    await addToCartButton.click();
   }
-
-  /**
-   * Verifies the number of displayed products does not exceed the expected count.
-   * @param {number} expectedCount
-   */
-  async verifyItemCount(expectedCount) {
-    const items = await this.page.$$('.product-item');
-    expect(items.length).toBeLessThanOrEqual(expectedCount);
-  }
-
-  
-
-  
-  }
-
+}
 
 module.exports = { ProductPage };
