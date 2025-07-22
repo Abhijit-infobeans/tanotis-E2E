@@ -5,9 +5,7 @@ class ProductPage {
     this.page = page;
   }
 
-  /**
-   * Sorts the product listing by a given label, e.g., "Price, low to high".
-   */
+  
   async sortBy(optionLabel) {
     const sortTrigger = this.page.locator('button', { hasText: 'Sort by' });
     await expect(sortTrigger).toBeVisible({ timeout: 10000 });

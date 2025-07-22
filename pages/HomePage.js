@@ -5,7 +5,8 @@ class HomePage {
     this.page = page;
   }
 
-  async goToHomePage(url) {
+  async goToHomePage(url) 
+  {
     await this.page.goto(url);
   }
 
@@ -26,4 +27,3 @@ class HomePage {
 }
 
 module.exports = { HomePage };
-

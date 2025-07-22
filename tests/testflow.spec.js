@@ -25,8 +25,15 @@ test('Full flow: Sort, and add to cart verification on Tanotis', async ({ page }
   console.log('Step 4: Adding product to cart...');
   await productPage.addProductToCart();
 
-  console.log('Step 5: Verifying cart popup and content...');
+  console.log('Step 5: Verifying cart popup...');
   await cartPage.verifyCartPopup();
- 
+
+  console.log('Step 6: Opening cart page...');
+  await cartPage.openCart();
+
+  console.log('Step 7: Verifying cart has item...');
   await cartPage.verifyCartHasItem();
+
+
+
 });
