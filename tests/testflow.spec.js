@@ -4,7 +4,7 @@ const { ProductPage } = require('../pages/ProductPage');
 const { CartPage } = require('../pages/CartPage');
 const testData = require('../testData/product.json');
 
-test('Full flow: Sort, and add to cart verification on Tanotis', async ({ page }) => {
+test('Full flow: Sort, add to cart, and increase quantity on Tanotis', async ({ page }) => {
   const homePage = new HomePage(page);
   const productPage = new ProductPage(page);
   const cartPage = new CartPage(page);
@@ -34,6 +34,10 @@ test('Full flow: Sort, and add to cart verification on Tanotis', async ({ page }
   console.log('Step 7: Verifying cart has item...');
   await cartPage.verifyCartHasItem();
 
+  console.log('Step 8: Increasing quantity...');
+  await cartPage.increaseQuantity(2); // increase by 2 clicks (total should be 3)
 
-
+  console.log('Step 9: Verifying updated quantity...');
+  const quantity = await cartPage.getQuantityValue();
+  
 });
