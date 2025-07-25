@@ -49,6 +49,8 @@ class ProductPage {
     await expect(addToCartButton).toBeVisible({ timeout: 10000 });
     await addToCartButton.click();
   }
+
+  
 }
 
 module.exports = { ProductPage };
